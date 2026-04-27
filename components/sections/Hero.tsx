@@ -96,9 +96,7 @@ export function Hero() {
                 style={{ display: "block", color: "var(--accent)" }}
               >
                 Castelhano
-                <span style={{ fontWeight: 400, color: "var(--accent)" }}>
-                  .
-                </span>
+                
               </span>
             </h1>
 
