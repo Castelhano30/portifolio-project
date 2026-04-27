@@ -24,7 +24,7 @@ export function Hero() {
       id="top"
       style={{
         position: "relative",
-        padding: "140px 0 80px",
+        padding: "clamp(100px, 18vw, 140px) 0 80px",
         minHeight: "100vh",
         isolation: "isolate",
         overflow: "hidden",
@@ -118,6 +118,7 @@ export function Hero() {
             </p>
 
             <div
+              className="hero-ctas"
               style={{
                 display: "flex",
                 gap: "12px",
@@ -214,7 +215,7 @@ export function Hero() {
                 boxShadow:
                   "0 0 0 1px var(--accent-line), 0 40px 80px -30px oklch(0 0 0 / 0.65)",
                 background: "var(--bg-2)",
-                width: "418px",
+                width: "min(418px, 100%)",
                 maxWidth: "100%",
                 aspectRatio: "418 / 487",
               }}
@@ -396,8 +397,20 @@ export function Hero() {
         @media (max-width: 1020px) {
           .hero-split {
             grid-template-columns: 1fr;
-            gap: 48px;
+            gap: 40px;
             min-height: unset;
+          }
+        }
+        @media (max-width: 620px) {
+          .hero-split {
+            gap: 32px;
+          }
+          .hero-ctas {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .hero-ctas a {
+            justify-content: center;
           }
         }
       `}</style>

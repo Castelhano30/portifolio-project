@@ -137,6 +137,13 @@ html { scrollbar-color: var(--line) transparent; scrollbar-width: thin; }
   opacity: 0.5;
 }
 
+/* ── Mobile global fixes ────────────────────────────────────────────── */
+@media (max-width: 620px) {
+  :root {
+    --sec-gap: clamp(64px, 10vw, 96px);
+  }
+}
+
 /* ── AI card gradient border ────────────────────────────────────────── */
 .ai-card-border::before {
   content: "";

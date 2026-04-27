@@ -136,8 +136,60 @@ export function Projects() {
             ))}
           </ol>
 
+          {/* Mobile project detail card */}
+          <div
+            className="proj-mobile-detail"
+            style={{
+              border: "1px solid var(--line)",
+              borderRadius: "var(--radius-lg)",
+              background: "var(--bg-card)",
+              overflow: "hidden",
+              marginTop: "24px",
+            }}
+          >
+            <div style={{ padding: "20px" }}>
+              <div
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "12px",
+                  color: "var(--fg-muted)",
+                  letterSpacing: "0.04em",
+                  marginBottom: "6px",
+                }}
+              >
+                {PROJECTS[active].kind} · {PROJECTS[active].year}
+              </div>
+              <div
+                style={{
+                  fontSize: "22px",
+                  fontWeight: 500,
+                  letterSpacing: "-0.02em",
+                  marginBottom: "8px",
+                }}
+              >
+                {PROJECTS[active].name}
+              </div>
+              <p
+                style={{
+                  color: "var(--fg-dim)",
+                  fontSize: "14.5px",
+                  lineHeight: 1.55,
+                  margin: "0 0 14px",
+                }}
+              >
+                {PROJECTS[active].desc}
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                {PROJECTS[active].stack.map((s) => (
+                  <Chip key={s}>{s}</Chip>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Panel */}
           <aside
+            className="proj-panel"
             style={{
               position: "sticky",
               top: "100px",
@@ -267,6 +319,10 @@ export function Projects() {
         }
         @media (max-width: 960px) {
           .proj-layout { grid-template-columns: 1fr; }
+          .proj-panel { display: none !important; }
+        }
+        @media (min-width: 961px) {
+          .proj-mobile-detail { display: none !important; }
         }
         @media (max-width: 620px) {
           .proj-row { grid-template-columns: 40px 1fr auto; }

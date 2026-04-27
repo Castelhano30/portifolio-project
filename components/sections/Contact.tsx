@@ -65,9 +65,10 @@ export function Contact() {
               className="contact-card"
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                alignItems: "center",
                 gap: "16px",
-                padding: "28px",
+                padding: "20px 24px",
                 border: "1px solid var(--line)",
                 borderRadius: "var(--radius-lg)",
                 background: "var(--bg-card)",
@@ -146,7 +147,7 @@ export function Contact() {
           gap: 16px;
         }
         @media (max-width: 780px) {
-          .contact-grid { grid-template-columns: 1fr; }
+          .contact-grid { grid-template-columns: 1fr; gap: 12px; }
         }
       `}</style>
     </section>
